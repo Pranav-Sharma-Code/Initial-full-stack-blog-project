@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { formatDate, truncate } from '@/lib/utils'
 import type { Post } from '@/types'
 
-interface PostWithAuthor extends Post {
+type PostWithAuthor = Omit<Post, 'profiles'> & {
   profiles: { name: string } | null
 }
 
